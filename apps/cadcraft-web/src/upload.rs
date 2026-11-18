@@ -29,10 +29,22 @@ const MAX_READING_BYTES: u64 = 512 << 20;
 /// A file read in the browser (name, contents), or why it couldn't be read.
 type Upload = Result<(String, Vec<u8>), String>;
 
+/// What became of a drawing the host page sent, once [`Inbox::drain`] tried to open it.
+pub enum HostOpened {
+    /// It opened as the drawing at this index of the session, from the file called `name`.
+    Drawing { index: usize, name: String },
+    /// It could not be opened, and this says why (what the command line and status bar show).
+    Failed(String),
+}
+
 /// Files read in the background, waiting for the app's next frame.
 #[derive(Clone)]
 pub struct Inbox {
     files: Rc<Cell<Vec<Upload>>>,
+    /// Drawings the host page sent: opened like the others, but the host is told what became of
+    /// them, so they wait apart from the user's own picks and drops. SHX fonts the host sends
+    /// that can be read wait in `files` and are registered like picked ones.
+    host: Rc<Cell<Vec<Upload>>>,
     /// Bytes of the files being read now.
     reading: Rc<Cell<u64>>,
     ctx: egui::Context,
@@ -40,7 +52,7 @@ pub struct Inbox {
 
 impl Inbox {
     pub fn new(ctx: &egui::Context) -> Self {
-        Inbox { files: Rc::default(), reading: Rc::default(), ctx: ctx.clone() }
+        Inbox { files: Rc::default(), host: Rc::default(), reading: Rc::default(), ctx: ctx.clone() }
     }
 
     /// Show the browser's file picker and return at once. A chosen file arrives through
@@ -127,17 +139,27 @@ impl Inbox {
     }
 
     /// A file read elsewhere (sent by the page embedding CADCraft): opened on the next frame like
-    /// a picked file, or refused when too large to open.
+    /// a picked file, or refused when too large to open. An SHX font waits with the picked files
+    /// and is registered as one of them; only drawings wait for the host to be told what became
+    /// of them.
     pub fn receive(&self, name: String, bytes: Vec<u8>) {
+        let push = if is_shx(&name) { Self::push } else { Self::push_host };
         match CadApp::open_size_error(&name, bytes.len() as u64) {
-            Some(e) => self.push(Err(e)),
-            None => self.push(Ok((name, bytes))),
+            Some(e) => push(self, Err(e)),
+            None => push(self, Ok((name, bytes))),
         }
     }
 
     /// A file from elsewhere refused before it was read (`error` says why).
     pub fn refuse(&self, error: String) {
-        self.push(Err(error));
+        self.push_host(Err(error));
+    }
+
+    fn push_host(&self, upload: Upload) {
+        let mut files = self.host.take();
+        files.push(upload);
+        self.host.set(files);
+        self.ctx.request_repaint();
     }
 
     fn push(&self, upload: Upload) {
@@ -148,8 +170,10 @@ impl Inbox {
     }
 
     /// Open what arrived since the last frame (or report why it couldn't be read). Fonts are
-    /// registered first, so drawings opened with them draw with them.
-    pub fn drain(&self, app: &mut CadApp) {
+    /// registered first (picked, dropped or sent by the host page), so drawings opened with them
+    /// draw with them. Returns what became of the drawings the host page sent, for the bridge to
+    /// report; a font the host sent is not reported.
+    pub fn drain(&self, app: &mut CadApp) -> Vec<HostOpened> {
         let (fonts, files): (Vec<Upload>, Vec<Upload>) = self.files.take().into_iter().partition(|u| u.as_ref().is_ok_and(|(n, _)| is_shx(n)));
         let mut registered = false;
         for (name, bytes) in fonts.into_iter().flatten() {
@@ -167,6 +191,35 @@ impl Inbox {
                 Err(e) => app.open_failed(e),
             }
         }
+        self.host.take().into_iter().filter_map(|upload| open_from_host(app, upload)).collect()
+    }
+}
+
+/// Open a drawing the host page sent, exactly as a picked file opens, and work out what became of
+/// it. [`CadApp::open_bytes`] reports only on screen, so the outcome is read back: a new drawing
+/// in the session means it opened; otherwise the status line it left says why. A file that opens
+/// without adding a drawing and without a message (an AutoLISP file that loaded) has no outcome.
+fn open_from_host(app: &mut CadApp, upload: Upload) -> Option<HostOpened> {
+    let (name, bytes) = match upload {
+        Ok(file) => file,
+        Err(e) => {
+            app.open_failed(e.clone());
+            return Some(HostOpened::Failed(e));
+        }
+    };
+    let before = app.session.docs.len();
+    // Set aside the status line so only a message from this open is read back; an older one is
+    // put back when this open leaves none.
+    let earlier = app.status.take();
+    app.open_bytes(&name, &bytes);
+    let message = app.status.as_ref().map(|(text, _)| text.clone());
+    if message.is_none() {
+        app.status = earlier;
+    }
+    // `open_drawing` adds the drawing at the end of the session.
+    match app.session.docs.len().checked_sub(1) {
+        Some(index) if index >= before => Some(HostOpened::Drawing { index, name }),
+        _ => message.map(HostOpened::Failed),
     }
 }
 

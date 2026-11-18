@@ -3,7 +3,10 @@
 //! Runs the same [`cadcraft_ui_egui::CadApp`] as the desktop app through eframe's web runner
 //! (wgpu: WebGPU where available, WebGL2 otherwise). Build with `trunk build --release` from this
 //! directory (output in `dist/web`). URL flags: `?webgl` forces WebGL2, `?cpu` draws the drawing
-//! with egui shapes instead of the GPU canvas, `?sample` opens the sample drawing. Saving downloads
+//! with egui shapes instead of the GPU canvas, `?sample` opens the sample drawing, and
+//! `?lang=<code>` (such as `?lang=it`) shows the interface in that language when CADCraft has a
+//! catalog for it, over the stored choice; an unknown code is ignored. Flags are whole query keys,
+//! so a host's free-text parameters (`?name=sample.dxf`) never switch one on. Saving downloads
 //! the drawing through the browser (`download.rs`). With `?host=parent` (inside an `<iframe>`), a
 //! same-origin parent page sends the drawing to open and stores what CADCraft saves instead
 //! (`host.rs`); a page can also host CADCraft in its own document (no iframe) with
@@ -44,7 +47,12 @@ mod web {
         fn logic(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
             // Background reads are consume-based and run on hidden ticks too. Dropped files are
             // input and are read from `ui` only.
-            self.1.drain(&mut self.0);
+            let from_host = self.1.drain(&mut self.0);
+            // What became of the drawings the host page sent: it is told about a failure, and a
+            // drawing that opened keeps the host's name as its file.
+            if let Some(bridge) = &self.2 {
+                bridge.opened(&mut self.0, from_host);
+            }
             self.0.system_animations = self.3.as_ref().map(|reduced| !reduced.matches());
             self.0.logic(ctx);
             let drawing = self.0.session.state().ok();
@@ -150,7 +158,7 @@ mod web {
         wasm_bindgen_futures::spawn_local(async move {
             let Some(document) = web_sys::window().and_then(|w| w.document()) else { return };
             let mut options = eframe::WebOptions::default();
-            if query().contains("webgl")
+            if crate::has_flag(&query(), "webgl")
                 && let eframe::egui_wgpu::WgpuSetup::CreateNew(create) = &mut options.wgpu_options.wgpu_setup
             {
                 create.instance_descriptor.backends = eframe::wgpu::Backends::GL;
@@ -172,6 +180,12 @@ mod web {
                         if let Some(prefs) = cc.storage.and_then(|s| s.get_string(cadcraft_ui_egui::PREFS_KEY)) {
                             app.load_prefs(&prefs);
                         }
+                        // `?lang=it`: a host page (or a link) picks the interface language, over the
+                        // browser's and the stored one, so an embedded CADCraft speaks the host's
+                        // language. It is saved with the preferences like a choice from the menu.
+                        if let Some(language) = crate::query_language(&query()) {
+                            app.ui.interface_language = language;
+                        }
                         if let Some(layout) = cc.storage.and_then(|s| s.get_string(crate::panel_layout::KEY))
                             && let Err(error) = crate::panel_layout::restore(&mut app.ui, &layout)
                         {
@@ -185,7 +199,7 @@ mod web {
                             // viewports stay in the layout's display list.
                             app.set_wgpu(rs, None);
                         }
-                        if query().contains("sample") {
+                        if crate::has_flag(&query(), "sample") {
                             let _ = app.run("ui.sample", serde_json::json!({}));
                         }
                         // No paths on the web: OPEN asks the browser's file picker, which reads the
@@ -220,10 +234,36 @@ mod web {
     }
 }
 
+/// The values of the URL query's `key` parameters (`?cpu&lang=it`: `cpu` has `""`, `lang` has
+/// `"it"`), matching whole keys only. A host page puts free text in other parameters
+/// (`?name=sample.dxf&author=…`), so a flag found anywhere in the query would switch on by accident.
+#[cfg(any(target_arch = "wasm32", test))]
+fn query_values<'a>(query: &'a str, key: &'a str) -> impl Iterator<Item = &'a str> + 'a {
+    query.trim_start_matches('?').split('&').filter_map(move |pair| {
+        let (k, v) = pair.split_once('=').unwrap_or((pair, ""));
+        (k == key).then_some(v)
+    })
+}
+
+/// True when the URL query has the flag `key`, bare (`?sample`) or with a value (`?sample=1`).
+#[cfg(any(target_arch = "wasm32", test))]
+fn has_flag(query: &str, key: &str) -> bool {
+    query_values(query, key).next().is_some()
+}
+
 /// True when the URL query (`?cpu&sample`) has a `cpu` flag: the CPU canvas path is requested.
 #[cfg(any(target_arch = "wasm32", test))]
 fn wants_cpu(query: &str) -> bool {
-    query.trim_start_matches('?').split('&').any(|p| p == "cpu" || p.starts_with("cpu="))
+    has_flag(query, "cpu")
+}
+
+/// The interface language the URL asks for (`?lang=it`): the first `lang` value when it is the
+/// exact code of a language CADCraft has a catalog for (`it`, `pt-BR`; not `it-IT`). `auto` names
+/// no language and is ignored like any other value, so it cannot undo a stored choice.
+#[cfg(any(target_arch = "wasm32", test))]
+fn query_language(query: &str) -> Option<cadcraft_ui_egui::i18n::Preference> {
+    use cadcraft_ui_egui::i18n::Preference;
+    query_values(query, "lang").next().and_then(Preference::parse).filter(|p| *p != Preference::Auto)
 }
 
 /// The browser tab title: the open drawing's file name, a bullet once it has unsaved changes,
@@ -279,7 +319,8 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-    use super::{document_title, push_title, title_to_send, wants_cpu};
+    use super::{document_title, has_flag, push_title, query_language, title_to_send, wants_cpu};
+    use cadcraft_ui_egui::i18n::Preference;
 
     /// Guards the `?cpu` URL flag: only a whole `cpu` query parameter (bare or with a value)
     /// selects the CPU canvas, so `?sample` and `?gpucpu` stay on the GPU path.
@@ -292,6 +333,43 @@ mod tests {
         assert!(!wants_cpu("?sample"));
         assert!(!wants_cpu("?webgl&sample"));
         assert!(!wants_cpu("?gpucpu"));
+        // A host's free-text parameter that happens to say `cpu` is not the flag.
+        assert!(!wants_cpu("?host=parent&name=cpu.dxf&author=cpu"));
+    }
+
+    /// Guards the other URL flags: whole keys only, so a drawing called `sample.dxf` sent with
+    /// `?name=` does not open the sample drawing too, and `?webglx` does not force WebGL2.
+    #[test]
+    fn flags_are_whole_query_keys() {
+        assert!(has_flag("?sample", "sample"));
+        assert!(has_flag("?webgl&sample=1", "sample"));
+        assert!(has_flag("?host=parent&webgl", "webgl"));
+        assert!(!has_flag("?host=parent&name=sample.dxf", "sample"));
+        assert!(!has_flag("?samples", "sample"));
+        assert!(!has_flag("?webglx", "webgl"));
+        assert!(!has_flag("", "sample"));
+    }
+
+    /// Guards `?lang=`: an exact catalog code sets the interface language whatever else the
+    /// query holds; a regional variant, `auto`, an empty or unknown value, or `lang` inside
+    /// another parameter's value is ignored, so the stored or browser language stays.
+    #[test]
+    fn lang_parameter_picks_a_language_with_a_catalog() {
+        assert_eq!(query_language("?lang=it"), Some(Preference::Italian));
+        assert_eq!(query_language("?host=parent&lang=it&author=Anna&v=3&name=pianta.dxf"), Some(Preference::Italian));
+        assert_eq!(query_language("?lang=pt-BR"), Some(Preference::BrazilianPortuguese));
+        assert_eq!(query_language("?lang=en"), Some(Preference::English));
+        // The first `lang` counts, as the browser's URLSearchParams.get reads it.
+        assert_eq!(query_language("?lang=de&lang=it"), Some(Preference::German));
+        assert_eq!(query_language("?lang=it-IT"), None);
+        assert_eq!(query_language("?lang=IT"), None);
+        assert_eq!(query_language("?lang=auto"), None);
+        assert_eq!(query_language("?lang="), None);
+        assert_eq!(query_language("?lang"), None);
+        assert_eq!(query_language("?lang=xx"), None);
+        assert_eq!(query_language("?name=lang=it"), None);
+        assert_eq!(query_language("?language=it"), None);
+        assert_eq!(query_language(""), None);
     }
 
     /// Guards the tab title text: a drawing contributes its name and, when dirty, a trailing

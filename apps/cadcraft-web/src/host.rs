@@ -11,12 +11,19 @@
 //!   says `file: false` and a host sends `bytes`.
 //! - `cadcraft:open` (from the host): `{ name, bytes }`. It opens like a file picked with
 //!   File › Open or dropped on the window; an oversized drawing is refused before it is copied.
+//!   A drawing file (DXF, or a name with no extension) that opens keeps the host's name as its
+//!   file, as a drawing opened from disk does: File › Save then hands it back under that name,
+//!   with no Save As, in the DXF version it came in (or the oldest CADCraft writes, R2000, for an
+//!   older file) and binary if it was binary. An imported SVG stays untitled. An SHX font (a
+//!   `.shx` name) is registered like a picked one, not opened, and gets no `cadcraft:failed`,
+//!   unless it is refused before it is read (sent as a `File`, or over the size limit).
 //! - `cadcraft:save` (to the host): `{ name, saveAs, bytes }` for every file CADCraft would
 //!   otherwise download (SAVE, SAVEAS, exports): it replaces the engine's delivery hook. The host
 //!   stores the file and reports failures itself. CADCraft doesn't tell the host which saves
 //!   make a file the document, so `saveAs` is always `false`.
-//! - `cadcraft:dirty` whenever unsaved changes appear or go away, `cadcraft:failed` when the app
-//!   couldn't start.
+//! - `cadcraft:dirty` whenever unsaved changes appear or go away; `cadcraft:failed` when the app
+//!   couldn't start, and when a drawing the host sent can't be opened (a DWG, which the web build
+//!   doesn't read, a damaged or an oversized file), with the reason the app also shows.
 //!
 //! In both host modes the app starts on the Start tab rather than an empty Drawing1, and the
 //! host guards leaving the page.
@@ -24,8 +31,11 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
+use cadcraft_io::Format;
 use cadcraft_ui_egui::CadApp;
 use craft_web_host::web::{FileData, Host, Message};
+
+use crate::upload::HostOpened;
 
 /// The app id in the host messages (`cadcraft:ready`).
 const APP: &str = "cadcraft";
@@ -73,6 +83,17 @@ impl Bridge {
         });
     }
 
+    /// After the inbox opened what the host sent: tell the host about each drawing that could not
+    /// be opened, and give each one that did the host's name as its file (see [`bind_file`]).
+    pub fn opened(&self, app: &mut CadApp, outcomes: Vec<HostOpened>) {
+        for outcome in outcomes {
+            match outcome {
+                HostOpened::Drawing { index, name } => bind_file(app, index, &name),
+                HostOpened::Failed(error) => self.post_failed(&error),
+            }
+        }
+    }
+
     /// After each logic callback (including a hidden tab's): tell the host when unsaved changes
     /// appear or go away. The crate does not repeat a state it already reported, so this is
     /// idempotent.
@@ -90,6 +111,28 @@ impl Bridge {
 pub fn deliver(name: &str, _mime: &str, bytes: &[u8]) -> Result<(), String> {
     let bridge = BRIDGE.with(|b| b.borrow().clone()).ok_or("the page that embeds CADCraft is gone")?;
     bridge.post_save(name, bytes)
+}
+
+/// Give the drawing at `index`, opened from the host's file `name`, that name as its file, as
+/// OPEN does for a file read from disk. Without it the drawing is untitled, so its first Save runs
+/// Save As in the default save version (2018) and a DXF kept at an older version for another
+/// program comes back silently upgraded. With it, QSAVE writes the drawing as it was read: the
+/// version in its `$ACADVER`, binary if it was binary, under the same name. On the web a file is
+/// only a name: the save is still handed to the host, never written anywhere. Only DXF names
+/// (a name without an extension counts as DXF) get one. An imported SVG stays untitled, so Save
+/// asks for a DXF name instead of writing over the picture. A `.dwg` or `.dwt` name stays
+/// untitled too: such a file only opens here when its bytes are really DXF, and QSAVE under that
+/// name would send it to the DWG writer, which the web build lacks, so the save would fail where
+/// Save As to a DXF name works.
+fn bind_file(app: &mut CadApp, index: usize, name: &str) {
+    if Format::from_path(name) != Some(Format::Dxf) {
+        return;
+    }
+    if let Some(drawing) = app.session.docs.get_mut(index)
+        && drawing.path.is_none()
+    {
+        drawing.path = Some(name.to_string());
+    }
 }
 
 /// The `cadcraft:open` payload, `{ name, bytes }` where `bytes` holds a drawing: it opens like a

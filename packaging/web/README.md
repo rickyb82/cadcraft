@@ -95,10 +95,10 @@ page over `postMessage`, with plain window messages that carry a `type`:
 | Message | Direction | Fields |
 |---|---|---|
 | `cadcraft:ready` | app → page | `version`, `appVersion`: the app is listening; send a drawing now |
-| `cadcraft:open` | page → app | `name`, `bytes` (an `ArrayBuffer` or `Uint8Array`): open like File › Open |
+| `cadcraft:open` | page → app | `name`, `bytes` (an `ArrayBuffer` or `Uint8Array`): open like File › Open. A DXF (or a name with no extension) keeps `name` as its file: File › Save hands it back under that name, with no Save As, in the DXF version it came in (R2000, the oldest CADCraft writes, for an older file). An SHX font (a `.shx` name) is registered like one picked with File › Open, and gets no `cadcraft:failed` unless it is refused before it is read (sent as a `File`, or over the size limit) |
 | `cadcraft:save` | app → page | `name`, `bytes` (a transferred `ArrayBuffer`): every file the app would otherwise download (SAVE, SAVEAS, exports). The page stores it and reports failures itself. |
 | `cadcraft:dirty` | app → page | `dirty`: unsaved changes appeared or went away |
-| `cadcraft:failed` | app → page | `error`: the app couldn't start |
+| `cadcraft:failed` | app → page | `error`: the app couldn't start, or a drawing the page sent couldn't be opened (a DWG, which the web build doesn't read; a damaged file; one over the size limit). The app shows the same reason on its command line and status bar |
 
 In host mode the app starts on the Start tab instead of an empty Drawing1, so the page should
 guard leaving it while changes are unsaved (that is what `cadcraft:dirty` reports).
@@ -182,6 +182,15 @@ CADCraft renders with wgpu. It uses **WebGPU** when the browser has it and falls
 | `?webgl` | Force the WebGL2 backend (useful when a WebGPU driver misbehaves) |
 | `?cpu` | Force the CPU canvas path (slowest, most compatible) |
 
-For example: `<iframe src="https://example.com/cadcraft/?webgl" ...>`.
+Two more flags are not about rendering:
+
+| Flag | Effect |
+|---|---|
+| `?sample` | Open the sample drawing |
+| `?lang=<code>` | Show the interface in that language, over the browser's and the stored choice: the exact code of a language CADCraft has a catalog for (`it`, `de`, `pt-BR`; not `it-IT`). It is then kept with the preferences, like a choice from the menu. Any other value is ignored |
+
+Flags are whole query keys: a host's own parameters (`?host=parent&name=sample.dxf`) never switch
+one on. For example: `<iframe src="https://example.com/cadcraft/?webgl" ...>` or
+`<iframe src="https://example.com/cadcraft/?host=parent&lang=it" ...>`.
 
 A browser with neither WebGPU nor WebGL2 gets a message in place of the app.
