@@ -1428,3 +1428,626 @@ menu	Modify	Edita
 
 # ArtCraft feature naming
 	Additional Tools	Strumenti aggiuntivi
+# Command-line prompts and the remaining interface strings (AI-assisted, written from the meaning of the English).
+	(1, 2, 4, 8, 16, 32, 64, 128, or 256)	(1, 2, 4, 8, 16, 32, 64, 128 o 256)
+	(ADD mode) Select objects	(modalità AGGIUNGI) Selezionare oggetti
+	(ADD mode) Specify endpoint of arc	(modalità AGGIUNGI) Specificare il punto finale dell'arco
+	(ADD mode) Specify height	(modalità AGGIUNGI) Specificare l'altezza
+	(ADD mode) Specify next point	(modalità AGGIUNGI) Specificare il punto successivo
+	(need X)	(occorre X)
+	(need XY)	(occorre XY)
+	(need XZ)	(occorre XZ)
+	(need Y)	(occorre Y)
+	(need YZ)	(occorre YZ)
+	(need Z)	(occorre Z)
+	(SUBTRACT mode) Select objects	(modalità SOTTRAI) Selezionare oggetti
+	(SUBTRACT mode) Specify endpoint of arc	(modalità SOTTRAI) Specificare il punto finale dell'arco
+	(SUBTRACT mode) Specify height	(modalità SOTTRAI) Specificare l'altezza
+	(SUBTRACT mode) Specify next point	(modalità SOTTRAI) Specificare il punto successivo
+	** ADD VERTEX ** Specify new vertex point	** ADD VERTEX ** Specificare il nuovo vertice
+	** CONVERT TO ARC ** Specify a point on the arc	** CONVERT TO ARC ** Specificare un punto sull'arco
+	** LENGTHEN ** Specify end point or length change	** LENGTHEN ** Specificare il punto finale o la variazione di lunghezza
+	** MIRROR ** Specify second point	** MIRROR ** Specificare il secondo punto
+	** MOVE ** Specify move point	** MOVE ** Specificare il punto di spostamento
+	** RADIUS ** Specify radius	** RADIUS ** Specificare il raggio
+	** ROTATE ** Specify rotation angle	** ROTATE ** Specificare l'angolo di rotazione
+	** SCALE ** Specify scale factor	** SCALE ** Specificare il fattore di scala
+	** STRETCH ** Specify stretch point	** STRETCH ** Specificare il punto di stiramento
+	** STRETCH ** Specify stretch point or distance	** STRETCH ** Specificare il punto di stiramento o la distanza
+	.X of	.X di
+	.XY of	.XY di
+	.XZ of	.XZ di
+	.Y of	.Y di
+	.YZ of	.YZ di
+	.Z of	.Z di
+	<Offset>	<Offset>
+	>> Expression	>> Espressione
+	A shortcut you give wins over CADCraft's own. Changes apply at once and are kept for next time.	Una scorciatoia assegnata da te prevale su quella di CADCraft. Le modifiche si applicano subito e restano per la prossima volta.
+	Alias files (PGP)	File di alias (PGP)
+	Aliases are saved in your CADCraft profile and survive restarts.	Gli alias vengono salvati nel profilo di CADCraft e restano dopo il riavvio.
+	Align block with object?	Allineare il blocco all'oggetto?
+	Analyze Usage	Analizza utilizzo
+	Annotative	Annotativo
+	Apparent Intersection of	Intersezione apparente di
+	Arrow size	Dimensione freccia
+	Associate the hatch with the new boundary?	Associare il tratteggio al nuovo contorno?
+	Associative dimension priority	Priorità della quota associativa
+	AutoLISP (LSP)	AutoLISP (LSP)
+	Back to CADCraft's shortcut	Torna alla scorciatoia di CADCraft
+	Backup copies are off, so the current file will be replaced.	Le copie di backup sono disattivate, quindi il file corrente verrà sostituito.
+	Backup copy	Copia di backup
+	Base point	Punto base
+	Block options	Opzioni blocco
+	Boolean options	Opzioni booleane
+	Breakline extension distance	Distanza di estensione della linea di interruzione
+	Breakline symbol size	Dimensione del simbolo di interruzione
+	Bring to front	Portare in primo piano
+	Calculate rectangle dimensions based on	Calcolare le dimensioni del rettangolo in base a
+	Center of	Centro di
+	Change	Cambia
+	Change Properties	Cambia proprietà
+	Choose mode for selected object conversion	Scegliere la modalità di conversione degli oggetti selezionati
+	Combine collinear objects that meet end to end	Combinare gli oggetti collineari che si congiungono agli estremi
+	Combine collinear objects that partially overlap	Combinare gli oggetti collineari parzialmente sovrapposti
+	Combine identical rows?	Combinare le righe identiche?
+	Combine layer property changes into one undo step?	Combinare le modifiche alle proprietà dei layer in un unico passo di annullamento?
+	Combine text into a single MTEXT?	Combinare il testo in un unico testo multilinea?
+	Combine zooms and pans into one undo step?	Combinare zoom e pan in un unico passo di annullamento?
+	Constant?	Costante?
+	Convert Lines and Arcs to polylines	Convertire linee e archi in polilinee
+	Create associative array	Creare una serie associativa
+	Create backup copy with each save	Crea una copia di backup a ogni salvataggio
+	Deferred Perpendicular	Perpendicolare differita
+	Deferred Tangent	Tangente differita
+	Delete old boundary(s)?	Eliminare i contorni precedenti?
+	Dim scale overall	Scala globale quota
+	Dimension options	Opzioni quota
+	Don't Save	Non salvare
+	Drafting mode?	Modalità di disegno?
+	Drag up to zoom in or down to zoom out; press Esc or Enter to exit	Trascinare verso l'alto per ingrandire o verso il basso per ridurre; premere Esc o Invio per uscire
+	Draw options	Opzioni disegno
+	Drawing	Disegno
+	DView	DView
+	DXF 2010 and earlier keep them. Use Save As to keep them in the drawing.	DXF 2010 e versioni precedenti li conservano. Usare Salva con nome per conservarli nel disegno.
+	DXF keeps them. Use Save As to keep them in the drawing.	DXF li conserva. Usare Salva con nome per conservarli nel disegno.
+	Edit attributes one at a time?	Modificare gli attributi uno alla volta?
+	Edit only attributes visible on screen?	Modificare solo gli attributi visibili sullo schermo?
+	Edit path for which xref(s)	Digitare gli xrif di cui modificare il percorso
+	Endpoint of	Fine di
+	Enter a boundary loop number to remove (starting at 1)	Digitare il numero del contorno chiuso da rimuovere (a partire da 1)
+	Enter a configuration option	Digitare un'opzione di configurazione
+	Enter a default viewport visibility option	Digitare un'opzione di visibilità predefinita nelle finestre
+	Enter a group description	Digitare la descrizione del gruppo
+	Enter a group name	Digitare il nome del gruppo
+	Enter a group option	Digitare un'opzione del gruppo
+	Enter a hatch option	Digitare un'opzione del tratteggio
+	Enter a loaded linetype name	Digitare il nome di un tipo di linea caricato
+	Enter a name for the new plotter	Digitare il nome del nuovo plotter
+	Enter a new name for the group	Digitare il nuovo nome del gruppo
+	Enter a plotter option	Digitare un'opzione del plotter
+	Enter a plotting preference	Digitare una preferenza di stampa
+	Enter a projection option	Digitare un'opzione di proiezione
+	Enter a property to turn on or off	Digitare una proprietà da attivare o disattivare
+	Enter a scale factor (nX or nXP)	Digitare un fattore di scala (nX o nXP)
+	Enter a text edit mode option	Digitare un'opzione della modalità di modifica del testo
+	Enter a trim mode option	Digitare un'opzione della modalità di taglio
+	Enter alignment [TL/TC/TR/ML/MC/MR/BL/BC/BR]	Digitare l'allineamento [TL/TC/TR/ML/MC/MR/BL/BC/BR]
+	Enter an annotation option	Digitare un'opzione di annotazione
+	Enter an extend mode option	Digitare un'opzione della modalità di estensione
+	Enter an implied edge extension mode	Digitare la modalità di estensione implicita dei bordi
+	Enter an option [Add/Remove] <Add>	Digitare un'opzione [Add/Remove] <Add>
+	Enter an option to change	Digitare un'opzione da modificare
+	Enter an UNDO control option	Digitare un'opzione di controllo di UNDO
+	Enter array type	Digitare il tipo di serie
+	Enter attribute tag	Digitare l'etichetta dell'attributo
+	Enter attribute tag specification	Digitare la specifica dell'etichetta dell'attributo
+	Enter attribute value specification	Digitare la specifica del valore dell'attributo
+	Enter attribute visibility setting	Digitare l'impostazione di visibilità degli attributi
+	Enter block name or select a block reference	Digitare il nome del blocco o selezionare un riferimento di blocco
+	Enter block name or select a block reference [?]	Digitare il nome del blocco o selezionare un riferimento di blocco [?]
+	Enter block name specification	Digitare la specifica del nome del blocco
+	Enter block names to extract	Digitare i nomi dei blocchi da estrarre
+	Enter block(s) to list	Digitare i blocchi da elencare
+	Enter cell margin	Digitare il margine della cella
+	Enter choice, 1 to 5	Digitare la scelta, da 1 a 5
+	Enter clipping option	Digitare l'opzione di ritaglio
+	Enter color name or number (1-255)	Digitare il nome o il numero del colore (1-255)
+	Enter column type	Digitare il tipo di colonne
+	Enter data format [General/Decimal/Percent/Text]	Digitare il formato dei dati [General/Decimal/Percent/Text]
+	Enter decimal places of accuracy (0 to 16)	Digitare la precisione in cifre decimali (da 0 a 16)
+	Enter dependent block name(s)	Digitare i nomi dei blocchi dipendenti
+	Enter dependent dimstyle name(s)	Digitare i nomi degli stili di quota dipendenti
+	Enter dependent layer name(s)	Digitare i nomi dei layer dipendenti
+	Enter dependent linetype name(s)	Digitare i nomi dei tipi di linea dipendenti
+	Enter dependent style name(s)	Digitare i nomi degli stili di testo dipendenti
+	Enter distance between rows or specify unit cell (---)	Digitare la distanza tra le righe o specificare la cella unitaria (---)
+	Enter file name	Digitare il nome del file
+	Enter fill color or None	Digitare il colore di riempimento o None
+	Enter first angle constraint	Digitare il primo vincolo angolare
+	Enter first line of annotation text or	Digitare la prima riga del testo di annotazione o
+	Enter first tolerance value	Digitare il primo valore di tolleranza
+	Enter fit tolerance	Digitare la tolleranza di adattamento
+	Enter fuzz distance	Digitare la distanza di tolleranza
+	Enter geometric characteristic	Digitare la caratteristica geometrica
+	Enter group description	Digitare la descrizione del gruppo
+	Enter group name	Digitare il nome del gruppo
+	Enter group name(s) to list	Digitare i nomi dei gruppi da elencare
+	Enter inspection rate	Digitare la frequenza di ispezione
+	Enter inspection shape	Digitare la forma di ispezione
+	Enter justification	Digitare la giustificazione
+	Enter knot parameterization	Digitare la parametrizzazione dei nodi
+	Enter label (press ENTER for none)	Digitare l'etichetta (premere INVIO per nessuna)
+	Enter layer description	Digitare la descrizione del layer
+	Enter layer name	Digitare il nome del layer
+	Enter layer name to make current	Digitare il nome del layer da rendere corrente
+	Enter layer name(s) for this plot preference	Digitare i nomi dei layer per questa preferenza di stampa
+	Enter layer name(s) to change color	Digitare i nomi dei layer di cui cambiare il colore
+	Enter layer name(s) to change default viewport visibility	Digitare i nomi dei layer di cui cambiare la visibilità predefinita nelle finestre
+	Enter layer name(s) to freeze	Digitare i nomi dei layer da congelare
+	Enter layer name(s) to list	Digitare i nomi dei layer da elencare
+	Enter layer name(s) to reset	Digitare i nomi dei layer da ripristinare
+	Enter layer name(s) to thaw	Digitare i nomi dei layer da scongelare
+	Enter layer option for offset objects	Digitare l'opzione di layer per gli oggetti creati con l'offset
+	Enter layout name for copy	Digitare il nome del layout per la copia
+	Enter layout name(s) to list	Digitare i nomi dei layout da elencare
+	Enter layout option	Digitare l'opzione di layout
+	Enter layout to make current	Digitare il layout da rendere corrente
+	Enter layout to rename	Digitare il layout da rinominare
+	Enter layout to save to template	Digitare il layout da salvare come modello
+	Enter leader format option	Digitare l'opzione di formato della direttrice
+	Enter line spacing factor or distance	Digitare il fattore o la distanza di interlinea
+	Enter line spacing type	Digitare il tipo di interlinea
+	Enter linetype(s) to load	Digitare i tipi di linea da caricare
+	Enter lineweight (0.0mm - 2.11mm)	Digitare lo spessore di linea (0.0mm - 2.11mm)
+	Enter magnification or height	Digitare l'ingrandimento o l'altezza
+	Enter maximum part height	Digitare l'altezza massima di ciascuna parte
+	Enter mline editing option	Digitare l'opzione di modifica della multilinea
+	Enter mline style name or [?]	Digitare il nome dello stile di multilinea o [?]
+	Enter name for new layer (becomes the current layer)	Digitare il nome del nuovo layer (diventa il layer corrente)
+	Enter name for new scale	Digitare il nome della nuova scala
+	Enter name for new viewport configuration	Digitare il nome della nuova configurazione di finestre
+	Enter name list for new layer(s)	Digitare l'elenco dei nomi dei nuovi layer
+	Enter name list of layer(s) to apply description	Digitare l'elenco dei nomi dei layer a cui applicare la descrizione
+	Enter name list of layer(s) to freeze	Digitare l'elenco dei nomi dei layer da congelare
+	Enter name list of layer(s) to lock	Digitare l'elenco dei nomi dei layer da bloccare
+	Enter name list of layer(s) to thaw	Digitare l'elenco dei nomi dei layer da scongelare
+	Enter name list of layer(s) to turn off	Digitare l'elenco dei nomi dei layer da disattivare
+	Enter name list of layer(s) to turn on	Digitare l'elenco dei nomi dei layer da attivare
+	Enter name list of layer(s) to unlock	Digitare l'elenco dei nomi dei layer da sbloccare
+	Enter name of block to manage	Digitare il nome del blocco da gestire
+	Enter name of block to sync	Digitare il nome del blocco da sincronizzare
+	Enter name of breakline symbol block (. for the built-in symbol)	Digitare il nome del blocco del simbolo di interruzione (. per il simbolo predefinito)
+	Enter name of drawing file to recover	Digitare il nome del file di disegno da ripristinare
+	Enter name of existing block	Digitare il nome del blocco esistente
+	Enter name of file to attach	Digitare il nome del file da associare
+	Enter name of file to overlay	Digitare il nome del file da sovrapporre
+	Enter name of layout to copy	Digitare il nome del layout da copiare
+	Enter name of layout to delete	Digitare il nome del layout da eliminare
+	Enter name of linetype file	Digitare il nome del file dei tipi di linea
+	Enter name of LISP file to load	Digitare il nome del file LISP da caricare
+	Enter name of new layout	Digitare il nome del nuovo layout
+	Enter name of output file	Digitare il nome del file di output
+	Enter name of scale to delete	Digitare il nome della scala da eliminare
+	Enter name of script file	Digitare il nome del file di script
+	Enter name of viewport configuration to restore	Digitare il nome della configurazione di finestre da ripristinare
+	Enter name(s) of new layers frozen in all viewports	Digitare i nomi dei nuovi layer congelati in tutte le finestre
+	Enter name(s) of viewport configurations to delete	Digitare i nomi delle configurazioni di finestre da eliminare
+	Enter name(s) of viewport configurations to list	Digitare i nomi delle configurazioni di finestre da elencare
+	Enter name(s) to purge	Digitare i nomi da eliminare
+	Enter named scale to add	Digitare la scala con nome da aggiungere
+	Enter named scale to delete	Digitare la scala con nome da eliminare
+	Enter new attribute value	Digitare il nuovo valore dell'attributo
+	Enter new block name	Digitare il nuovo nome del blocco
+	Enter new color	Digitare il nuovo colore
+	Enter new default value	Digitare il nuovo valore predefinito
+	Enter new dimension style name	Digitare il nuovo nome dello stile di quota
+	Enter new dimension text	Digitare il nuovo testo della quota
+	Enter new group name	Digitare il nuovo nome del gruppo
+	Enter new layer name	Digitare il nuovo nome del layer
+	Enter new layout name	Digitare il nuovo nome del layout
+	Enter new linetype name	Digitare il nuovo nome del tipo di linea
+	Enter new linetype scale factor	Digitare il nuovo fattore di scala del tipo di linea
+	Enter new lineweight	Digitare il nuovo spessore di linea
+	Enter new material name	Digitare il nuovo nome del materiale
+	Enter new multileader style name	Digitare il nuovo nome dello stile multidirettrice
+	Enter new order	Digitare il nuovo ordine
+	Enter new plot style name	Digitare il nuovo nome dello stile di stampa
+	Enter new prompt	Digitare il nuovo messaggio
+	Enter new string	Digitare la nuova stringa
+	Enter new table style name	Digitare il nuovo nome dello stile tabella
+	Enter new tag	Digitare la nuova etichetta
+	Enter new text style	Digitare il nuovo stile di testo
+	Enter new text style name	Digitare il nuovo nome dello stile di testo
+	Enter new UCS name	Digitare il nuovo nome dell'UCS
+	Enter new value for CONSTRAINTINFER	Digitare il nuovo valore di CONSTRAINTINFER
+	Enter new value for PICKSTYLE	Digitare il nuovo valore di PICKSTYLE
+	Enter new value for THICKNESS	Digitare il nuovo valore di THICKNESS
+	Enter new value for XCLIPFRAME	Digitare il nuovo valore di XCLIPFRAME
+	Enter new view name	Digitare il nuovo nome della vista
+	Enter new viewport configuration name	Digitare il nuovo nome della configurazione di finestre
+	Enter next line of annotation text	Digitare la riga successiva del testo di annotazione
+	Enter next line of text (empty line to finish)	Digitare la riga di testo successiva (riga vuota per terminare)
+	Enter number of actions	Digitare il numero di operazioni
+	Enter number of columns (|||)	Digitare il numero di colonne (|||)
+	Enter number of digits to right of decimal point (0 to 8)	Digitare il numero di cifre decimali (da 0 a 8)
+	Enter number of fractional places for display of angles (0 to 8)	Digitare il numero di cifre decimali per la visualizzazione degli angoli (da 0 a 8)
+	Enter number of items in array	Digitare il numero di elementi della serie
+	Enter number of rows (---)	Digitare il numero di righe (---)
+	Enter object ordering option	Digitare l'opzione di ordinamento degli oggetti
+	Enter object type to rename	Digitare il tipo di oggetto da rinominare
+	Enter obliquing angle (press ENTER for none)	Digitare l'angolo di inclinazione (premere INVIO per nessuno)
+	Enter old block name	Digitare il vecchio nome del blocco
+	Enter old dimension style name	Digitare il vecchio nome dello stile di quota
+	Enter old group name	Digitare il vecchio nome del gruppo
+	Enter old layer name	Digitare il vecchio nome del layer
+	Enter old linetype name	Digitare il vecchio nome del tipo di linea
+	Enter old material name	Digitare il vecchio nome del materiale
+	Enter old multileader style name	Digitare il vecchio nome dello stile multidirettrice
+	Enter old plot style name	Digitare il vecchio nome dello stile di stampa
+	Enter old table style name	Digitare il vecchio nome dello stile tabella
+	Enter old text style name	Digitare il vecchio nome dello stile di testo
+	Enter old UCS name	Digitare il vecchio nome dell'UCS
+	Enter old view name	Digitare il vecchio nome della vista
+	Enter old viewport configuration name	Digitare il vecchio nome della configurazione di finestre
+	Enter option	Digitare un'opzione
+	Enter option [Save/Discard reference changes] <Save>	Digitare un'opzione [Save/Discard reference changes] <Save>
+	Enter precision (0-8)	Digitare la precisione (0-8)
+	Enter properties to match (SELECTSIMILARMODE bit code)	Digitare le proprietà da confrontare (codice bit di SELECTSIMILARMODE)
+	Enter property to change	Digitare la proprietà da modificare
+	Enter scale ratio (paper units:drawing units)	Digitare il rapporto di scala (unità carta:unità disegno)
+	Enter second angle constraint	Digitare il secondo vincolo angolare
+	Enter second tolerance value	Digitare il secondo valore di tolleranza
+	Enter spline creation method	Digitare il metodo di creazione della spline
+	Enter string to change	Digitare la stringa da modificare
+	Enter style name	Digitare il nome dello stile
+	Enter symbol type to bind	Digitare il tipo di simbolo da unire
+	Enter target layer name	Digitare il nome del layer di destinazione
+	Enter template file name	Digitare il nome del file modello
+	Enter text color (name, index or ByBlock)	Digitare il colore del testo (nome, indice o ByBlock)
+	Enter text height	Digitare l'altezza del testo
+	Enter text style name	Digitare il nome dello stile di testo
+	Enter the distance between rows or specify unit cell (---)	Digitare la distanza tra le righe o specificare la cella unitaria (---)
+	Enter the drawing to compare with (an open drawing's name or a file path)	Digitare il disegno da confrontare (nome di un disegno aperto o percorso di un file)
+	Enter the maximum points for leader line	Digitare il numero massimo di punti della direttrice
+	Enter the name of the block to replace	Digitare il nome del blocco da sostituire
+	Enter the number of columns	Digitare il numero di colonne
+	Enter the number of columns (|||)	Digitare il numero di colonne (|||)
+	Enter the number of items in the array	Digitare il numero di elementi della serie
+	Enter the number of levels	Digitare il numero di livelli
+	Enter the number of operations to undo	Digitare il numero di operazioni da annullare
+	Enter the number of rows	Digitare il numero di righe
+	Enter the number of rows (---)	Digitare il numero di righe (---)
+	Enter the output	Digitare il tipo di output
+	Enter the paper name	Digitare il nome del formato carta
+	Enter the paper width,height in mm	Digitare larghezza,altezza della carta in mm
+	Enter the plotter to add a paper size to	Digitare il plotter a cui aggiungere un formato carta
+	Enter the plotter to delete	Digitare il plotter da eliminare
+	Enter the type of array	Digitare il tipo di serie
+	Enter tolerance location	Specificare la posizione della tolleranza
+	Enter transparency value	Digitare il valore di trasparenza
+	Enter transparency value (0-90)	Digitare il valore di trasparenza (0-90)
+	Enter trim method	Digitare il metodo di taglio
+	Enter Trim mode option	Digitare l'opzione della modalità di taglio
+	Enter type of dimension editing	Digitare il tipo di modifica della quota
+	Enter type of unused objects to purge	Digitare il tipo di oggetti inutilizzati da eliminare
+	Enter type of value modification	Digitare il tipo di modifica del valore
+	Enter UNDO Auto mode	Digitare la modalità Auto di UNDO
+	Enter value	Digitare il valore
+	Enter variable name	Digitare il nome della variabile
+	Enter view name to restore	Digitare il nome della vista da ripristinare
+	Enter view name to save	Digitare il nome della vista da salvare
+	Enter view name(s) to delete	Digitare i nomi delle viste da eliminare
+	Enter view name(s) to list	Digitare i nomi delle viste da elencare
+	Enter viewport arrangement	Digitare la disposizione delle finestre
+	Enter viewport configuration name	Digitare il nome della configurazione di finestre
+	Enter what to pick	Digitare cosa scegliere
+	Enter X scale factor, specify opposite corner	Digitare il fattore di scala X, specificare l'angolo opposto
+	Enter xref name(s) to bind	Digitare i nomi degli xrif da unire
+	Enter xref name(s) to detach	Digitare i nomi degli xrif da scollegare
+	Enter xref name(s) to reload	Digitare i nomi degli xrif da ricaricare
+	Enter xref name(s) to unload	Digitare i nomi degli xrif da scaricare
+	Enter xref(s) to list	Digitare gli xrif da elencare
+	Enter Y scale factor	Digitare il fattore di scala Y
+	Erase polyline?	Cancellare la polilinea?
+	Erase source object after offsetting?	Cancellare l'oggetto di origine dopo l'offset?
+	Erase source objects?	Cancellare gli oggetti di origine?
+	Expand Tool Sets	Espandi set di strumenti
+	Extension of	Estensione di
+	First point of mid	Primo punto per il punto medio
+	First tracking point	Primo punto di puntamento
+	Fix any errors detected?	Correggere gli errori rilevati?
+	Font	Carattere
+	Geometric Center of	Centro geometrico di
+	Get from the drawing or [Point/Distance/Angle/Intersection]	Prendere dal disegno o [Point/Distance/Angle/Intersection]
+	Guide crosshairs along cloud path	Guidare il cursore a croce lungo il percorso della nuvola
+	Hatch options	Opzioni tratteggio
+	Imperial (inches)	Imperiale (pollici)
+	Implied Loops	Contorni chiusi impliciti
+	Import and replace	Importa e sostituisci
+	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Importa: qui non c'è una finestra di selezione dei file; eseguire ALIASEDIT passando il contenuto del file nel parametro text.
+	Importing a file replaces your {n} aliases, and any changes not applied yet.	L'importazione di un file sostituisce i tuoi {n} alias e le modifiche non ancora applicate.
+	Import…	Importa…
+	Indicate dimension point to add	Indicare il punto di quota da aggiungere
+	Indicate dimension point to remove	Indicare il punto di quota da rimuovere
+	Insertion of	Inserimento di
+	Internal error; press Enter to end the command	Errore interno; premere Invio per terminare il comando
+	Intersection of	Intersezione di
+	Invisible?	Invisibile?
+	Island detection style	Stile di rilevamento isole
+	Isometric plane?	Piano isometrico?
+	Keep associative objects	Conservare gli oggetti associativi
+	Keep my aliases	Mantieni i miei alias
+	Keyboard Shortcuts	Scorciatoie da tastiera
+	Keyboard Shortcuts...	Scorciatoie da tastiera...
+	Leader options	Opzioni direttrice
+	Lock the view of viewports?	Bloccare la vista delle finestre?
+	Measure angles clockwise?	Misurare gli angoli in senso orario?
+	Metric (millimetres)	Metrico (millimetri)
+	Midpoint of	Medio di
+	MLine	Multilinea
+	Modify options	Opzioni modifica
+	Multiple Insert	Inserimento multiplo
+	Nearest of	Vicino di
+	Needs Ctrl, Alt or a function key	Richiede Ctrl, Alt o un tasto funzione
+	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Il comando Nuovo e il primo disegno all'avvio usano queste unità, a meno che non sia impostato un modello predefinito (QNEWTEMPLATE).
+	New color	Nuovo colore
+	Next point (Press ENTER to end tracking)	Punto successivo (premere INVIO per terminare il puntamento)
+	No mark: undo everything?	Nessun contrassegno: annullare tutto?
+	Node of	Nodo di
+	Number of objects to move	Numero di oggetti da spostare
+	Object selected is not a polyline. Do you want to turn it into one?	L'oggetto selezionato non è una polilinea. Trasformarlo in polilinea?
+	Optimize segments within polylines	Ottimizzare i segmenti all'interno delle polilinee
+	Parallel of	Parallelo di
+	Parametric options	Opzioni parametriche
+	Perpendicular of	Perpendicolare di
+	Pick a table cell	Scegliere una cella della tabella
+	Pick an internal point for the new boundary	Scegliere un punto interno per il nuovo contorno
+	Pick internal point	Scegliere un punto interno
+	Polyface Mesh	Mesh multifaccia
+	Precision	Precisione
+	Press the keys	Premere i tasti
+	Primitives options	Opzioni primitive
+	Quadrant of	Quadrante di
+	Raster Image Reference...	Riferimento immagine raster...
+	Raster Images	Immagini raster
+	Red, Green, Blue	Rosso, Verde, Blu
+	Red,Green,Blue	Rosso,Verde,Blu
+	Remove objects	Rimuovere oggetti
+	Replaces the shortcut of {commands}	Sostituisce la scorciatoia di {commands}
+	Reset the scale list to the defaults?	Ripristinare l'elenco delle scale ai valori predefiniti?
+	Rotate arrayed items?	Ruotare gli elementi della serie?
+	Rotate arrayed objects?	Ruotare gli oggetti della serie?
+	Run ALIASEDIT with the file's contents using its text parameter.	Eseguire ALIASEDIT passando il contenuto del file nel parametro text.
+	Save Anyway	Salva comunque
+	Save cancelled: {path} was not changed.	Salvataggio annullato: {path} non è stato modificato.
+	Save changes to array?	Salvare le modifiche alla serie?
+	Save changes to block "{name}"?	Salvare le modifiche al blocco "{name}"?
+	Save changes to {name}?	Salvare le modifiche a {name}?
+	Save layer settings with views?	Salvare le impostazioni dei layer con le viste?
+	Save Layout as Template	Salva layout come modello
+	Saving {name} will remove content	Il salvataggio di {name} rimuoverà del contenuto
+	Scale objects based on alignment points?	Scalare gli oggetti in base ai punti di allineamento?
+	Second point of mid	Secondo punto per il punto medio
+	Select a block	Selezionare un blocco
+	Select a block reference	Selezionare un riferimento di blocco
+	Select a content type	Selezionare un tipo di contenuto
+	Select a leader type	Selezionare un tipo di direttrice
+	Select a multileader	Selezionare una multidirettrice
+	Select a table	Selezionare una tabella
+	Select a viewport	Selezionare una finestra
+	Select an item in array to replace	Selezionare l'elemento della serie da sostituire
+	Select an object on the layer to be frozen	Selezionare un oggetto sul layer da congelare
+	Select an object on the layer to be locked	Selezionare un oggetto sul layer da bloccare
+	Select an object on the layer to be turned off	Selezionare un oggetto sul layer da disattivare
+	Select an object on the layer to be unlocked	Selezionare un oggetto sul layer da sbloccare
+	Select an object to copy	Selezionare l'oggetto da copiare
+	Select annotative objects	Selezionare gli oggetti annotativi
+	Select arcs to join to source	Selezionare gli archi da unire all'oggetto di origine
+	Select array	Selezionare la serie
+	Select attributes	Selezionare gli attributi
+	Select base dimension	Selezionare la quota di base
+	Select base point of replacement objects	Specificare il punto base degli oggetti sostitutivi
+	Select block reference	Selezionare il riferimento di blocco
+	Select boundary objects (Enter finds them)	Selezionare gli oggetti di contorno (Invio per trovarli)
+	Select clipping object	Selezionare l'oggetto di delimitazione
+	Select closed boundary objects to add	Selezionare gli oggetti di contorno chiusi da aggiungere
+	Select destination object(s)	Selezionare gli oggetti di destinazione
+	Select dimension	Selezionare la quota
+	Select dimension to add jog	Selezionare la quota a cui aggiungere la spezzatura
+	Select dimension to add/remove break	Selezionare la quota a cui aggiungere/rimuovere l'interruzione
+	Select dimensions to space	Selezionare le quote da spaziare
+	Select dominant viewport	Selezionare la finestra dominante
+	Select elliptical arcs to join to source	Selezionare gli archi ellittici da unire all'oggetto di origine
+	Select first mline	Selezionare la prima multilinea
+	Select geometry to dimension	Selezionare la geometria da quotare
+	Select grip	Selezionare un grip
+	Select grip or <edit the hot grips>	Selezionare un grip o <edit the hot grips>
+	Select grip to edit array	Selezionare il grip per modificare la serie
+	Select group	Selezionare il gruppo
+	Select hatch object	Selezionare l'oggetto tratteggio
+	Select item in array	Selezionare un elemento della serie
+	Select jog to remove	Selezionare la spezzatura da rimuovere
+	Select mline	Selezionare la multilinea
+	Select multileader to align to or [Options]	Selezionare la multidirettrice a cui allineare o [Options]
+	Select new datum point	Selezionare il nuovo punto di riferimento
+	Select object on layer to delete	Selezionare un oggetto sul layer da eliminare
+	Select object on layer to merge	Selezionare un oggetto sul layer da unire
+	Select object on target layer	Selezionare un oggetto sul layer di destinazione
+	Select object to break dimension	Selezionare l'oggetto che interrompe la quota
+	Select object to clip viewport	Selezionare l'oggetto per delimitare la finestra
+	Select object to count or [List/Spaces]	Selezionare l'oggetto da contare o [List/Spaces]
+	Select objects or	Selezionare oggetti o
+	Select objects to add	Selezionare gli oggetti da aggiungere
+	Select objects to add to the group	Selezionare gli oggetti da aggiungere al gruppo
+	Select objects to erase or	Selezionare gli oggetti da cancellare o
+	Select objects to join to the spline	Selezionare gli oggetti da unire alla spline
+	Select objects to remove	Selezionare gli oggetti da rimuovere
+	Select objects to remove from the group	Selezionare gli oggetti da rimuovere dal gruppo
+	Select reference	Selezionare il riferimento
+	Select reference objects	Selezionare gli oggetti di riferimento
+	Select replacement objects	Selezionare gli oggetti sostitutivi
+	Select second mline	Selezionare la seconda multilinea
+	Select source object	Selezionare l'oggetto di origine
+	Select spline-fit polylines to convert	Selezionare le polilinee adattate a spline da convertire
+	Select viewport to clip	Selezionare la finestra da delimitare
+	Select viewport to join	Selezionare la finestra da unire
+	Select viewports	Selezionare le finestre
+	Select xref	Selezionare l'xrif
+	Show borders? [On/Off]	Mostrare i bordi? [On/Off]
+	Solid options	Opzioni solido
+	Sort text top-down?	Ordinare il testo dall'alto in basso?
+	Specify a fit tolerance	Specificare una tolleranza di adattamento
+	Specify a point on the spline <exit>	Specificare un punto sulla spline <exit>
+	Specify a precision	Specificare la precisione
+	Specify angle for dimension text	Specificare l'angolo del testo della quota
+	Specify base point of objects	Specificare il punto base degli oggetti
+	Specify block attachment	Specificare il collegamento del blocco
+	Specify bottom-center point of text	Specificare il punto in basso al centro del testo
+	Specify bottom-left point of text	Specificare il punto in basso a sinistra del testo
+	Specify bottom-right point of text	Specificare il punto in basso a destra del testo
+	Specify center location override	Specificare la posizione del centro sostitutivo
+	Specify center of isocircle	Specificare il centro dell'isocerchio
+	Specify center of view box	Specificare il centro del riquadro di vista
+	Specify center point	Specificare il centro
+	Specify center point for rectangle	Specificare il centro del rettangolo
+	Specify center point of text	Specificare il punto centrale del testo
+	Specify chamfer angle from the first line	Specificare l'angolo di smusso dalla prima linea
+	Specify chamfer length on the first line	Specificare la lunghezza di smusso sulla prima linea
+	Specify change point	Specificare il punto di modifica
+	Specify clipping boundary or select invert option	Specificare il contorno di ritaglio o selezionare l'opzione di inversione
+	Specify collected multileader location or [Vertical/Horizontal/Wrap]	Specificare la posizione della multidirettrice raccolta o [Vertical/Horizontal/Wrap]
+	Specify column height	Specificare l'altezza della colonna
+	Specify column width	Specificare la larghezza della colonna
+	Specify control point	Specificare il punto di controllo
+	Specify control point <exit>	Specificare il punto di controllo <exit>
+	Specify diameter of isocircle	Specificare il diametro dell'isocerchio
+	Specify dimension line position	Specificare la posizione della linea di quota
+	Specify direction	Specificare la direzione
+	Specify direction (first point)	Specificare la direzione (primo punto)
+	Specify direction (second point)	Specificare la direzione (secondo punto)
+	Specify direction of chord for arc	Specificare la direzione della corda dell'arco
+	Specify direction of vertex tangent	Specificare la direzione della tangente nel vertice
+	Specify displacement	Specificare lo spostamento
+	Specify displacement base point	Specificare il punto base dello spostamento
+	Specify distance between columns (|||)	Specificare la distanza tra le colonne (|||)
+	Specify end parameter	Specificare il parametro finale
+	Specify end tangent	Specificare la tangente finale
+	Specify ending half-width	Specificare la semilarghezza finale
+	Specify endpoint of the arc	Specificare il punto finale dell'arco
+	Specify existing fit point <exit>	Specificare il punto di adattamento esistente <exit>
+	Specify first break point	Specificare il primo punto di interruzione
+	Specify first corner of the unit cell	Specificare il primo angolo della cella unitaria
+	Specify first fence point	Specificare il primo punto della linea di selezione
+	Specify first point for arc length dimension	Specificare il primo punto della quota di lunghezza arco
+	Specify first point for breakline	Specificare il primo punto della linea di interruzione
+	Specify first point of first line	Specificare il primo punto della prima linea
+	Specify first point of second line	Specificare il primo punto della seconda linea
+	Specify first point or [Options]	Specificare il primo punto o [Options]
+	Specify first polygon point	Specificare il primo punto del poligono
+	Specify fit point	Specificare il punto di adattamento
+	Specify fourth point or	Specificare il quarto punto o
+	Specify gutter width	Specificare la larghezza dello spazio tra le colonne
+	Specify included angle for arc	Specificare l'angolo compreso dell'arco
+	Specify insertion point of the table	Specificare il punto di inserimento della tabella
+	Specify jog location	Specificare la posizione della spezzatura
+	Specify jog location (or press ENTER)	Specificare la posizione della spezzatura (o premere INVIO)
+	Specify leader arrowhead location or [Remove leaders]	Specificare la posizione della punta della direttrice o [Remove leaders]
+	Specify leader start point	Specificare il punto iniziale della direttrice
+	Specify leaders to remove	Specificare le direttrici da rimuovere
+	Specify leaders to remove or [Add leaders]	Specificare le direttrici da rimuovere o [Add leaders]
+	Specify length of line	Specificare la lunghezza della linea
+	Specify linetype name	Specificare il nome del tipo di linea
+	Specify location for break symbol	Specificare la posizione del simbolo di interruzione
+	Specify location of the block	Specificare la posizione del blocco
+	Specify location of the text	Specificare la posizione del testo
+	Specify middle point of text	Specificare il punto medio del testo
+	Specify middle-left point of text	Specificare il punto medio a sinistra del testo
+	Specify middle-right point of text	Specificare il punto medio a destra del testo
+	Specify new angle	Specificare il nuovo angolo
+	Specify new block insertion point	Specificare il nuovo punto di inserimento del blocco
+	Specify new block rotation angle	Specificare il nuovo angolo di rotazione del blocco
+	Specify new circle radius	Specificare il nuovo raggio del cerchio
+	Specify new elevation	Specificare la nuova elevazione
+	Specify new fit point <exit>	Specificare il nuovo punto di adattamento <exit>
+	Specify new height	Specificare la nuova altezza
+	Specify new length	Specificare la nuova lunghezza
+	Specify new linetype scale	Specificare la nuova scala del tipo di linea
+	Specify new location	Specificare la nuova posizione
+	Specify new location for dimension text	Specificare la nuova posizione del testo della quota
+	Specify new point on spline <exit>	Specificare il nuovo punto sulla spline <exit>
+	Specify new rotation angle	Specificare il nuovo angolo di rotazione
+	Specify new text insertion point	Specificare il nuovo punto di inserimento del testo
+	Specify new thickness	Specificare la nuova altezza oggetto
+	Specify next fence point	Specificare il punto successivo della linea di selezione
+	Specify number of columns	Specificare il numero di colonne
+	Specify other corner	Specificare l'altro angolo
+	Specify quadrant	Specificare il quadrante
+	Specify radius of isocircle	Specificare il raggio dell'isocerchio
+	Specify reference angle	Specificare l'angolo di riferimento
+	Specify reference length	Specificare la lunghezza di riferimento
+	Specify right endpoint of text baseline	Specificare l'estremo destro della linea di base del testo
+	Specify rotation around major axis	Specificare la rotazione attorno all'asse maggiore
+	Specify scale factor for XYZ axes	Specificare il fattore di scala per gli assi XYZ
+	Specify second chamfer distance	Specificare la seconda distanza di smusso
+	Specify second point for arc length dimension	Specificare il secondo punto della quota di lunghezza arco
+	Specify second point for breakline	Specificare il secondo punto della linea di interruzione
+	Specify second point of first line	Specificare il secondo punto della prima linea
+	Specify second point of second line	Specificare il secondo punto della seconda linea
+	Specify second point on arc	Specificare il secondo punto sull'arco
+	Specify size of view box	Specificare la dimensione del riquadro di vista
+	Specify spacing	Specificare la spaziatura
+	Specify start parameter	Specificare il parametro iniziale
+	Specify start tangent	Specificare la tangente iniziale
+	Specify starting half-width	Specificare la semilarghezza iniziale
+	Specify temporary OTRACK point	Specificare il punto OTRACK temporaneo
+	Specify text height	Specificare l'altezza del testo
+	Specify the angle between items	Specificare l'angolo tra gli elementi
+	Specify the angle to fill (+=ccw, -=cw)	Specificare l'angolo da riempire (+=antiorario, -=orario)
+	Specify the distance between columns	Specificare la distanza tra le colonne
+	Specify the distance between columns (|||)	Specificare la distanza tra le colonne (|||)
+	Specify the distance between levels	Specificare la distanza tra i livelli
+	Specify the distance between rows	Specificare la distanza tra le righe
+	Specify the distance between the first and last column	Specificare la distanza tra la prima e l'ultima colonna
+	Specify the distance between the first and last level	Specificare la distanza tra il primo e l'ultimo livello
+	Specify the distance between the first and last row	Specificare la distanza tra la prima e l'ultima riga
+	Specify the incrementing elevation between rows	Specificare l'incremento di elevazione tra le righe
+	Specify the new angle	Specificare il nuovo angolo
+	Specify the pattern origin	Specificare l'origine del modello di tratteggio
+	Specify the reference angle	Specificare l'angolo di riferimento
+	Specify the tangent direction for the start point of arc	Specificare la direzione della tangente nel punto iniziale dell'arco
+	Specify third point	Specificare il terzo punto
+	Specify tolerance	Specificare la tolleranza
+	Specify top-center point of text	Specificare il punto in alto al centro del testo
+	Specify top-left point of text	Specificare il punto in alto a sinistra del testo
+	Specify top-right point of text	Specificare il punto in alto a destra del testo
+	Specify total width	Specificare la larghezza totale
+	Specify view twist angle	Specificare l'angolo di rotazione della vista
+	Specify width	Specificare la larghezza
+	Specify X scale factor	Specificare il fattore di scala X
+	Specify Y scale factor	Specificare il fattore di scala Y
+	Specify Z scale factor	Specificare il fattore di scala Z
+	Specify Z scale factor or	Specificare il fattore di scala Z o
+	Specify zoom scale factor	Specificare il fattore di scala dello zoom
+	Table options	Opzioni tabella
+	Tangent of	Tangente di
+	Text options	Opzioni testo
+	The current file doesn't look whole, so {name} stays as it is and the current file will be replaced.	Il file corrente non sembra integro, quindi {name} resta com'è e il file corrente verrà sostituito.
+	The current file is kept as {name} until the next save.	Il file corrente viene conservato come {name} fino al prossimo salvataggio.
+	This format can't keep these objects yet: {objects}.	Questo formato non può ancora conservare questi oggetti: {objects}.
+	Tolerance	Tolleranza
+	Total Angle	Angolo totale
+	Turned off, a right-click while a command runs does what Right-Click Customization sets for Command mode.	Se disattivato, un clic destro durante un comando esegue ciò che Personalizzazione pulsante destro imposta per la Modalità comando.
+	Type of boundary object	Tipo di oggetto di contorno
+	Type something to find	Digitare qualcosa da cercare
+	Units	Unità
+	Units of new drawings	Unità dei nuovi disegni
+	Use landing	Usare il tratto orizzontale
+	Verify each name to be purged?	Confermare ogni nome da eliminare?
+	View options	Opzioni vista
+	Visible	Visibile
+	Where should the data go?	Dove inviare i dati?
+	Word-wrap text?	Mandare a capo automaticamente il testo?
+	Xref	Xrif
+	Your changes will be lost if you don't save them.	Le modifiche andranno perse se non vengono salvate.
+	{count} more types	altri {count} tipi
+	{n} more warnings; see the command line.	Altri {n} avvisi: vedere la riga di comando.
