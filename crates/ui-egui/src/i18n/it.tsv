@@ -1466,17 +1466,13 @@ menu	Modify	Edita
 	Alias files (PGP)	File di alias (PGP)
 	Aliases are saved in your CADCraft profile and survive restarts.	Gli alias vengono salvati nel profilo di CADCraft e restano dopo il riavvio.
 	Align block with object?	Allineare il blocco all'oggetto?
-	Analyze Usage	Analizza utilizzo
 	Annotative	Annotativo
 	Apparent Intersection of	Intersezione apparente di
-	Arrow size	Dimensione freccia
 	Associate the hatch with the new boundary?	Associare il tratteggio al nuovo contorno?
 	Associative dimension priority	Priorità della quota associativa
-	AutoLISP (LSP)	AutoLISP (LSP)
 	Back to CADCraft's shortcut	Torna alla scorciatoia di CADCraft
 	Backup copies are off, so the current file will be replaced.	Le copie di backup sono disattivate, quindi il file corrente verrà sostituito.
 	Backup copy	Copia di backup
-	Base point	Punto base
 	Block options	Opzioni blocco
 	Boolean options	Opzioni booleane
 	Breakline extension distance	Distanza di estensione della linea di interruzione
@@ -1485,7 +1481,6 @@ menu	Modify	Edita
 	Calculate rectangle dimensions based on	Calcolare le dimensioni del rettangolo in base a
 	Center of	Centro di
 	Change	Cambia
-	Change Properties	Cambia proprietà
 	Choose mode for selected object conversion	Scegliere la modalità di conversione degli oggetti selezionati
 	Combine collinear objects that meet end to end	Combinare gli oggetti collineari che si congiungono agli estremi
 	Combine collinear objects that partially overlap	Combinare gli oggetti collineari parzialmente sovrapposti
@@ -1500,9 +1495,7 @@ menu	Modify	Edita
 	Deferred Perpendicular	Perpendicolare differita
 	Deferred Tangent	Tangente differita
 	Delete old boundary(s)?	Eliminare i contorni precedenti?
-	Dim scale overall	Scala globale quota
 	Dimension options	Opzioni quota
-	Don't Save	Non salvare
 	Drafting mode?	Modalità di disegno?
 	Drag up to zoom in or down to zoom out; press Esc or Enter to exit	Trascinare verso l'alto per ingrandire o verso il basso per ridurre; premere Esc o Invio per uscire
 	Draw options	Opzioni disegno
@@ -1546,7 +1539,6 @@ menu	Modify	Edita
 	Enter block name or select a block reference	Digitare il nome del blocco o selezionare un riferimento di blocco
 	Enter block name or select a block reference [?]	Digitare il nome del blocco o selezionare un riferimento di blocco [?]
 	Enter block name specification	Digitare la specifica del nome del blocco
-	Enter block names to extract	Digitare i nomi dei blocchi da estrarre
 	Enter block(s) to list	Digitare i blocchi da elencare
 	Enter cell margin	Digitare il margine della cella
 	Enter choice, 1 to 5	Digitare la scelta, da 1 a 5
@@ -1568,7 +1560,6 @@ menu	Modify	Edita
 	Enter first tolerance value	Digitare il primo valore di tolleranza
 	Enter fit tolerance	Digitare la tolleranza di adattamento
 	Enter fuzz distance	Digitare la distanza di tolleranza
-	Enter geometric characteristic	Digitare la caratteristica geometrica
 	Enter group description	Digitare la descrizione del gruppo
 	Enter group name	Digitare il nome del gruppo
 	Enter group name(s) to list	Digitare i nomi dei gruppi da elencare
@@ -1624,7 +1615,6 @@ menu	Modify	Edita
 	Enter name of layout to copy	Digitare il nome del layout da copiare
 	Enter name of layout to delete	Digitare il nome del layout da eliminare
 	Enter name of linetype file	Digitare il nome del file dei tipi di linea
-	Enter name of LISP file to load	Digitare il nome del file LISP da caricare
 	Enter name of new layout	Digitare il nome del nuovo layout
 	Enter name of output file	Digitare il nome del file di output
 	Enter name of scale to delete	Digitare il nome della scala da eliminare
@@ -1693,7 +1683,6 @@ menu	Modify	Edita
 	Enter option [Save/Discard reference changes] <Save>	Digitare un'opzione [Save/Discard reference changes] <Save>
 	Enter precision (0-8)	Digitare la precisione (0-8)
 	Enter properties to match (SELECTSIMILARMODE bit code)	Digitare le proprietà da confrontare (codice bit di SELECTSIMILARMODE)
-	Enter property to change	Digitare la proprietà da modificare
 	Enter scale ratio (paper units:drawing units)	Digitare il rapporto di scala (unità carta:unità disegno)
 	Enter second angle constraint	Digitare il secondo vincolo angolare
 	Enter second tolerance value	Digitare il secondo valore di tolleranza
@@ -1756,13 +1745,10 @@ menu	Modify	Edita
 	First point of mid	Primo punto per il punto medio
 	First tracking point	Primo punto di puntamento
 	Fix any errors detected?	Correggere gli errori rilevati?
-	Font	Carattere
 	Geometric Center of	Centro geometrico di
 	Get from the drawing or [Point/Distance/Angle/Intersection]	Prendere dal disegno o [Point/Distance/Angle/Intersection]
 	Guide crosshairs along cloud path	Guidare il cursore a croce lungo il percorso della nuvola
 	Hatch options	Opzioni tratteggio
-	Imperial (inches)	Imperiale (pollici)
-	Implied Loops	Contorni chiusi impliciti
 	Import and replace	Importa e sostituisci
 	Import: there is no file dialog here; run ALIASEDIT with the file's contents using its text parameter.	Importa: qui non c'è una finestra di selezione dei file; eseguire ALIASEDIT passando il contenuto del file nel parametro text.
 	Importing a file replaces your {n} aliases, and any changes not applied yet.	L'importazione di un file sostituisce i tuoi {n} alias e le modifiche non ancora applicate.
@@ -1782,14 +1768,12 @@ menu	Modify	Edita
 	Leader options	Opzioni direttrice
 	Lock the view of viewports?	Bloccare la vista delle finestre?
 	Measure angles clockwise?	Misurare gli angoli in senso orario?
-	Metric (millimetres)	Metrico (millimetri)
 	Midpoint of	Medio di
 	MLine	Multilinea
 	Modify options	Opzioni modifica
 	Multiple Insert	Inserimento multiplo
 	Nearest of	Vicino di
 	Needs Ctrl, Alt or a function key	Richiede Ctrl, Alt o un tasto funzione
-	New and the first drawing at startup use these units unless a default template is set (QNEWTEMPLATE).	Il comando Nuovo e il primo disegno all'avvio usano queste unità, a meno che non sia impostato un modello predefinito (QNEWTEMPLATE).
 	New color	Nuovo colore
 	Next point (Press ENTER to end tracking)	Punto successivo (premere INVIO per terminare il puntamento)
 	No mark: undo everything?	Nessun contrassegno: annullare tutto?
@@ -1804,11 +1788,8 @@ menu	Modify	Edita
 	Pick an internal point for the new boundary	Scegliere un punto interno per il nuovo contorno
 	Pick internal point	Scegliere un punto interno
 	Polyface Mesh	Mesh multifaccia
-	Precision	Precisione
-	Press the keys	Premere i tasti
 	Primitives options	Opzioni primitive
 	Quadrant of	Quadrante di
-	Raster Image Reference...	Riferimento immagine raster...
 	Raster Images	Immagini raster
 	Red, Green, Blue	Rosso, Verde, Blu
 	Red,Green,Blue	Rosso,Verde,Blu
@@ -1822,9 +1803,7 @@ menu	Modify	Edita
 	Save cancelled: {path} was not changed.	Salvataggio annullato: {path} non è stato modificato.
 	Save changes to array?	Salvare le modifiche alla serie?
 	Save changes to block "{name}"?	Salvare le modifiche al blocco "{name}"?
-	Save changes to {name}?	Salvare le modifiche a {name}?
 	Save layer settings with views?	Salvare le impostazioni dei layer con le viste?
-	Save Layout as Template	Salva layout come modello
 	Saving {name} will remove content	Il salvataggio di {name} rimuoverà del contenuto
 	Scale objects based on alignment points?	Scalare gli oggetti in base ai punti di allineamento?
 	Second point of mid	Secondo punto per il punto medio
@@ -2040,7 +2019,6 @@ menu	Modify	Edita
 	Type of boundary object	Tipo di oggetto di contorno
 	Type something to find	Digitare qualcosa da cercare
 	Units	Unità
-	Units of new drawings	Unità dei nuovi disegni
 	Use landing	Usare il tratto orizzontale
 	Verify each name to be purged?	Confermare ogni nome da eliminare?
 	View options	Opzioni vista
@@ -2048,6 +2026,5 @@ menu	Modify	Edita
 	Where should the data go?	Dove inviare i dati?
 	Word-wrap text?	Mandare a capo automaticamente il testo?
 	Xref	Xrif
-	Your changes will be lost if you don't save them.	Le modifiche andranno perse se non vengono salvate.
 	{count} more types	altri {count} tipi
 	{n} more warnings; see the command line.	Altri {n} avvisi: vedere la riga di comando.
